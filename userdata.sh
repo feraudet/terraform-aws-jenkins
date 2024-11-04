@@ -75,7 +75,7 @@ if [ $RESULTAMAZON -eq 0 ]; then
   # Install Java
   amazon-linux-extras install java-openjdk11 -y
   # Create EFS mount folder & mount
-  /bin/yum -y install nfs-utils docker
+  /bin/yum -y install nfs-utils docker java-17-amazon-corretto
   mkdir /efsmnt
   echo 'Attempting to mount EFS filesystem ${efs_dnsname}...'
   counter=0
