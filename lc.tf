@@ -17,6 +17,7 @@ resource "aws_launch_configuration" "jenkins" {
       efs_dnsname             = aws_efs_file_system.this.dns_name
       preliminary_user_data   = var.preliminary_user_data
       supplementary_user_data = var.supplementary_user_data
+      timeoutstartsec         = var.service_timeoutstartsec
   })
 
   # Setup root block device
