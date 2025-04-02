@@ -52,6 +52,7 @@ if [ $RESULTUBUNTU -eq 0 ]; then
   # Mount JENKINS_HOME -> EFS
   /bin/sed -i '/JENKINS_HOME=/c\Environment="JENKINS_HOME=/efsmnt"' /usr/lib/systemd/system/jenkins.service
   /bin/sed -i '/WorkingDirectory=/c\WorkingDirectory=/efsmnt' /usr/lib/systemd/system/jenkins.service
+  /bin/sed -i '/^\[Service\]/a TimeoutStartSec=${timeoutstartsec}' /usr/lib/systemd/system/jenkins.service
   # Lets ensure state:
   #   * EFS mounted
   #   * Mounts are all working

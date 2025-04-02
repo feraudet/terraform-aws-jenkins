@@ -36,6 +36,11 @@ variable "supplementary_user_data" {
   description = "Supplementary shell script commands for adding to user data.Runs at the end of userdata"
   default     = "#supplementary_user_data"
 }
+variable "timeoutstartsec" {
+  type        = number
+  description = "Jenkins systemd service - TimeoutStartSec : default 600"
+  default     = 600
+}
 variable "iam_instance_profile" {
   type        = string
   description = "IAM instance profile for Jenkins server"
