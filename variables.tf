@@ -146,6 +146,11 @@ variable "listener1_alb_listener_port" {
   description = "HTTP listener port"
   default     = 80
 }
+variable "service_timeoutstartsec" {
+  type        = number
+  description = "Timeout start in sec"
+  default     = 1000
+}
 variable "listener1_alb_listener_protocol" {
   type        = string
   description = "HTTP listener protocol"
